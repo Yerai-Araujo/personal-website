@@ -1,0 +1,44 @@
+
+<div class="grid grid-cols-1 gap-8 py-10 justify-items-center mx-auto max-w-6xl">
+  @for (project of projects; track project.id) {
+    <a
+      [routerLink]="project.route"
+      class="group block w-full max-w-3xl focus:outline-none"
+      [attr.aria-label]="'Ver detalles de ' + project.title"
+    >
+      <div
+        class="bg-white shadow-sm rounded-xl p-8 md:p-10 border border-slate-200
+               cursor-pointer transition-all duration-200
+               group-hover:shadow-lg group-hover:-translate-y-1
+               group-hover:border-blue-300
+               focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <h2 class="text-2xl md:text-3xl font-semibold text-slate-800 group-hover:text-blue-700">
+            {{ project.title }}
+          </h2>
+
+          <svg
+            class="h-6 w-6 text-slate-400 transition-transform duration-200
+                   group-hover:translate-x-1 group-hover:text-blue-600"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <p class="text-slate-600 mt-3 text-lg md:text-xl">
+          {{ project.description }}
+        </p>
+
+        <div class="mt-5 inline-flex items-center gap-2 text-base md:text-lg font-medium text-blue-700">
+          Ver detalles del proyecto
+          <span class="opacity-70 group-hover:opacity-100">→</span>
+        </div>
+      </div>
+    </a>
+  }
+</div>
