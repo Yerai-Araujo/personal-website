@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+/* Tu CSS base por encima o debajo es válido, pero para el font-size, mejor en @layer base */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 14px; /* Normaliza escala en Windows 125-150% */
+  }
+
+  @media (min-width: 1400px) {
+    html {
+      font-size: 16px; /* Vuelve a tamaño “normal” en pantallas grandes */
+    }
+  }
 }

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './project1.component.html',
 })
 export class Project1Component {
-  headline = 'Assset tracker';
+  headline = 'Asset tracker';
 
 }
