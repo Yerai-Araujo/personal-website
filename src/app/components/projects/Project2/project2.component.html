@@ -14,7 +14,7 @@
   </header>
 
   <!-- Bloque: descripción profunda del proyecto -->
-  <div class="max-w-3xl text-slate-800 space-y-6">
+  <div class="max-w-3xl text-slate-800 space-y-12">
     <p class="text-2xl leading-relaxed">
       Este proyecto es la evolución del proyecto Asset tracker a una arquitectura de microservicios.
       El objetivo es demostrar cómo una aplicación monolítica puede ser transformada en un conjunto de
@@ -29,6 +29,35 @@
 
       <ul class="list-disc pl-6 text-2xl leading-relaxed space-y-2">
         <li>Todas las funcionalidades del proyecto monolítico, pero implementadas en un entorno de microservicios.</li>
+      </ul>
+    </div>
+
+    <!-- Bloque: Arquitectura de Microservicios -->
+    <div class="space-y-3">
+      <h2 class="text-3xl font-bold text-slate-900">Arquitectura de Microservicios</h2>
+
+      <p class="text-2xl leading-relaxed">
+        El sistema está compuesto por varios microservicios, se detallan las funcionalidades de cada uno:
+      </p>
+      <ul class="list-disc pl-6 text-2xl leading-relaxed space-y-2">
+        <li><strong>User</strong>
+          <ul>
+            <li>Responsabilidades: registro, autenticación, JWT, gestión de usuarios</li>
+            <li>Tiene su propia base de datos</li>
+          </ul>
+        </li>
+        <li><strong>Portfolio</strong>
+          <ul>
+            <li>Responsabilidades: seguimiento de precios y gestión de activos disponibles</li>
+            <li>Tiene su propia base de datos</li>
+          </ul>
+        </li>
+        <li><strong>Market</strong>
+          <ul>
+            <li>Responsabilidades: Obtener precios externos, Cache, Retry, CircuitBreaker, Fallback</li>
+            <li>No necesita su propia base de datos, solo cache</li>
+          </ul>
+        </li>
       </ul>
     </div>
 
