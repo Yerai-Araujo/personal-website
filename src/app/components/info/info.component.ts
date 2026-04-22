@@ -22,7 +22,7 @@ Me encanta resolver problemas y aprender cosas nuevas.`;
   // Resumen profesional
   summary = [
     'Experiencia de aproximadamente 2 años como Backend Software Engineer.',
-    'Enfocado en desarrollo de APIs y servicios mantenibles.',
+    'Experiencia construyendo microservicios event-driven utilizando Apache Kafka, implementando el Outbox Pattern y CDC con Debezium.',
     'Diseño e implementación de arquitecturas basadas en microservicios.',
     'Integración de bases de datos relacionales y no relacionales.',
     'Aplicación de principios SOLID, clean code y buenas prácticas en backend.',
@@ -31,7 +31,7 @@ Me encanta resolver problemas y aprender cosas nuevas.`;
     'Desarrollo de tests automatizados para asegurar calidad y estabilidad.',
     'Optimización de rendimiento en servicios backend y consultas a BD.',
     'Uso de Docker y Kubernetes para despliegues escalables y reproducibles.',
-    'También he trabajado en frontend en un proyecto con Angular.',
+    'También he trabajado en frontend en varios proyectos con Angular.',
   ];
 
   // Skills

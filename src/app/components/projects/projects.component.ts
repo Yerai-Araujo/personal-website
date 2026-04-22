@@ -14,6 +14,7 @@ export interface ProjectCard {
   selector: 'app-projects',
   imports: [RouterLink],
   templateUrl: './projects.component.html',
+  standalone: true,
 })
 export class ProjectsComponent {
 

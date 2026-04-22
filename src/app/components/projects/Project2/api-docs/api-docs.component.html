@@ -1,0 +1,18 @@
+<div class="docs-layout">
+
+  <!-- HEADER -->
+  <header class="docs-header">
+    <div class="docs-title">API Docs</div>
+
+    <select class="api-selector" (change)="onApiChange($event)">
+      <option value="portfolio">Portfolio API</option>
+      <option value="user">User API</option>
+    </select>
+  </header>
+
+  <!-- SWAGGER -->
+  <main class="docs-content">
+    <div #swaggerContainer class="swagger-container"></div>
+  </main>
+
+</div>

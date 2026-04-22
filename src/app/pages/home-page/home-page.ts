@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-home-page',
   imports: [RouterOutlet, SideMenuComponent, CommonModule],
   templateUrl: './home-page.html',
+  standalone: true,
 })
 export class HomePage {
 

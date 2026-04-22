@@ -12,6 +12,7 @@ interface MenuOption {
   selector: 'gifs-side-menu-options',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './side-menu-options.component.html',
+  standalone: true,
 })
 export class SideMenuOptionsComponent {
   @Output() select = new EventEmitter<void>();

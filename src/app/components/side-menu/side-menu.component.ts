@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'gifs-side-menu',
   imports: [SideMenuHeaderComponent, SideMenuOptionsComponent, CommonModule],
   templateUrl: './side-menu.component.html',
+  standalone: true,
 })
 export class SideMenuComponent {
 

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-project1',
   templateUrl: './project1.component.html',
+  standalone: true,
 })
 export class Project1Component {
   headline = 'Asset tracker';

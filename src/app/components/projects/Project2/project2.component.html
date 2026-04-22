@@ -1,65 +1,175 @@
 <section class="w-full mt-14">
-  <header class="mb-12">
-    <h1 class="text-5xl font-extrabold tracking-tight text-slate-900">
-      {{ headline }}
-    </h1>
+  <div *ngIf="!router.url.includes('api-docs-microservices')">
+    <header class="mb-12">
+      <h1 class="text-5xl font-extrabold tracking-tight text-slate-900">
+        {{ headline }}
+      </h1>
 
-    <!-- Bloque: enlace al GitHub -->
-    <div class="pt-4">
-      <a href="https://github.com/Yerai-Araujo/asset-tracker-api-microservices" target="_blank"
-        class="inline-block text-2xl font-semibold text-blue-600 hover:text-blue-700 transition">
-        Ver código en GitHub →
-      </a>
-    </div>
-  </header>
+      <!-- Bloque: enlace al GitHub -->
+      <div class="pt-4">
+        <a href="https://github.com/Yerai-Araujo/asset-tracker-api-microservices" target="_blank"
+          class="inline-block text-2xl font-semibold text-blue-600 hover:text-blue-700 transition">
+          Ver código en GitHub →
+        </a>
+        <br>
+        <a [routerLink]="['./api-docs-microservices']"
+          class="inline-block text-2xl font-semibold text-blue-600 hover:text-blue-700 transition mt-2">
+          Ver API Docs de microservicios →
+        </a>
+      </div>
+    </header>
 
-  <!-- Bloque: descripción profunda del proyecto -->
-  <div class="max-w-3xl text-slate-800 space-y-12 mx-auto text-center">
-    <p class="text-2xl leading-relaxed">
-      Este proyecto es la evolución del proyecto Asset tracker a una arquitectura de microservicios.
-      El objetivo es demostrar cómo una aplicación monolítica puede ser transformada en un conjunto de
-      servicios independientes que se comunican entre sí, mejorando la escalabilidad, mantenibilidad y
-      flexibilidad del sistema. Cada microservicio se encarga de una funcionalidad específica,
-      como gestión de usuarios, seguimiento de activos o cálculo de valor del portfolio.
-    </p>
-
-    <!-- Bloque: funcionalidades principales -->
-    <div class="space-y-3">
-      <h2 class="text-3xl font-bold text-slate-900">Funcionalidades principales</h2>
-
-      <ul class="no-bullets pl-6 text-2xl leading-relaxed space-y-2">
-        <li>Todas las funcionalidades del proyecto monolítico, pero implementadas en un entorno de microservicios.</li>
-      </ul>
-    </div>
-
-    <!-- Bloque: Arquitectura de Microservicios -->
-    <div class="space-y-3">
-      <h2 class="text-3xl font-bold text-slate-900">Arquitectura de Microservicios</h2>
-
+    <!-- Bloque: descripción profunda del proyecto -->
+    <div class="max-w-3xl text-slate-800 space-y-12 mx-auto text-center">
       <p class="text-2xl leading-relaxed">
-        El sistema está compuesto por varios microservicios, se detallan las funcionalidades de cada uno:
+        Este proyecto es la evolución del proyecto Asset tracker a una arquitectura de microservicios.
+        Backend distribuido para gestionar y valorar activos digitales y físicos (criptomonedas,
+        metales preciosos, etc.) mediante una arquitectura de microservicios basada en eventos.
       </p>
-      <ul class="no-bullets pl-6 text-2xl leading-relaxed space-y-2">
-        <li><strong>User</strong>
-          <ul>
-            <li>Responsabilidades: registro, autenticación, JWT, gestión de usuarios</li>
-            <li>Tiene su propia base de datos</li>
-          </ul>
-        </li>
-        <li><strong>Portfolio</strong>
-          <ul>
-            <li>Responsabilidades: seguimiento de precios y gestión de activos disponibles</li>
-            <li>Tiene su propia base de datos</li>
-          </ul>
-        </li>
-        <li><strong>Market</strong>
-          <ul>
-            <li>Responsabilidades: Obtener precios externos, Cache, Retry, CircuitBreaker, Fallback</li>
-            <li>No necesita su propia base de datos, solo cache</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
 
+      <!-- Bloque: Tabla de Servicios -->
+      <div class="space-y-3">
+        <h2 class="text-3xl font-bold text-slate-900">Servicios disponibles</h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-slate-300 shadow-md rounded-lg overflow-hidden">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="border border-slate-300 px-6 py-4 text-left font-semibold">Servicio</th>
+                <th class="border border-slate-300 px-6 py-4 text-left font-semibold">Repositorio</th>
+                <th class="border border-slate-300 px-6 py-4 text-left font-semibold">Descripción</th>
+              </tr>
+            </thead>
+            <tbody class="text-lg">
+              <tr class="hover:bg-slate-100 transition">
+                <td class="border border-slate-300 px-6 py-4 font-semibold">Portfolio Service</td>
+                <td class="border border-slate-300 px-6 py-4">
+                  <a href="https://github.com/Yerai-Araujo/asset-tracker-api-portfolio-service" target="_blank"
+                    class="text-blue-600 hover:text-blue-700 font-semibold transition">
+                    🔗 Ver repo
+                  </a>
+                </td>
+                <td class="border border-slate-300 px-6 py-4">Gestiona portfolios, activos y operaciones</td>
+              </tr>
+              <tr class="hover:bg-slate-100 transition">
+                <td class="border border-slate-300 px-6 py-4 font-semibold">User Service</td>
+                <td class="border border-slate-300 px-6 py-4">
+                  <a href="https://github.com/Yerai-Araujo/asset-tracker-api-user-service" target="_blank"
+                    class="text-blue-600 hover:text-blue-700 font-semibold transition">
+                    🔗 Ver repo
+                  </a>
+                </td>
+                <td class="border border-slate-300 px-6 py-4">Maneja autenticación y usuarios</td>
+              </tr>
+              <tr class="hover:bg-slate-100 transition">
+                <td class="border border-slate-300 px-6 py-4 font-semibold">Market Service</td>
+                <td class="border border-slate-300 px-6 py-4">
+                  <a href="https://github.com/Yerai-Araujo/asset-tracker-api-market-service" target="_blank"
+                    class="text-blue-600 hover:text-blue-700 font-semibold transition">
+                    🔗 Ver repo
+                  </a>
+                </td>
+                <td class="border border-slate-300 px-6 py-4">Provee precios de mercado (cripto, metales)</td>
+              </tr>
+              <tr class="hover:bg-slate-100 transition">
+                <td class="border border-slate-300 px-6 py-4 font-semibold">Read Model Service</td>
+                <td class="border border-slate-300 px-6 py-4">
+                  <a href="https://github.com/Yerai-Araujo/asset-tracker-api-read-model-service" target="_blank"
+                    class="text-blue-600 hover:text-blue-700 font-semibold transition">
+                    🔗 Ver repo
+                  </a>
+                </td>
+                <td class="border border-slate-300 px-6 py-4">Construye vistas optimizadas para consulta (CQRS)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Bloque: Diagrama de Arquitectura -->
+      <div class="space-y-3 mt-12">
+        <h2 class="text-3xl font-bold text-slate-900">Diagrama del Sistema</h2>
+        <div class="flex justify-center">
+          <img src="/Architecture_system_diagram.png" alt="Diagrama de arquitectura del sistema de microservicios"
+            class="max-w-4xl w-full rounded-lg shadow-lg border border-slate-300 hover:shadow-2xl transition">
+        </div>
+      </div>
+
+      <!-- Bloque: Descripción general de la arquitectura -->
+      <div class="space-y-3">
+        <h2 class="text-3xl font-bold text-slate-900">Descripción general de la arquitectura</h2>
+        <p class="text-2xl leading-relaxed">
+          Este sistema implementa una arquitectura Event-Driven + CQRS utilizando:
+        </p>
+        <ul class="no-bullets pl-6 text-2xl leading-relaxed space-y-2">
+          <li>Outbox Pattern para evitar dual writes</li>
+          <li>Debezium (CDC) para capturar cambios en la base de datos</li>
+          <li>Kafka como event bus</li>
+          <li>MongoDB como base de datos optimizada para lectura</li>
+        </ul>
+      </div>
+
+      <!-- Bloque: Tech Stack -->
+      <div class="space-y-5">
+        <h2 class="text-3xl font-bold text-slate-900">Tech Stack</h2>
+
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900">Backend</h3>
+          <ul class="no-bullets pl-6 text-2xl leading-relaxed space-y-2 mt-2">
+            <li>Java + Spring Boot</li>
+            <li>Spring Data JPA</li>
+            <li>Spring Kafka</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900">Data & Streaming</h3>
+          <ul class="no-bullets pl-6 text-2xl leading-relaxed space-y-2 mt-2">
+            <li>PostgreSQL</li>
+            <li>MongoDB (Read Model)</li>
+            <li>Apache Kafka</li>
+            <li>Debezium (CDC)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900">Infraestructura</h3>
+          <ul class="no-bullets pl-6 text-2xl leading-relaxed space-y-2 mt-2">
+            <li>Docker & Docker Compose (El sistema se ejecuta completamente con Docker)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bloque: Key Features -->
+      <div class="space-y-3">
+        <h2 class="text-3xl font-bold text-slate-900">Key Features</h2>
+        <ul class="no-bullets pl-6 text-2xl leading-relaxed space-y-2">
+          <li>Event-Driven Architecture</li>
+          <li>CQRS (Command Query Responsibility Segregation)</li>
+          <li>Outbox Pattern (consistencia garantizada)</li>
+          <li>CDC con Debezium (sin dual writes)</li>
+          <li>Escalabilidad y bajo acoplamiento</li>
+          <li>Read models optimizados para consultas</li>
+        </ul>
+      </div>
+
+      <!-- Bloque: Diagramas ERD -->
+      <div class="space-y-6 mt-12">
+        <h2 class="text-3xl font-bold text-slate-900">Diagramas ERD</h2>
+        <div class="space-y-6">
+          <div class="flex justify-center">
+            <img src="/asset_tracker.png" alt="Diagrama ERD de asset tracker"
+              class="max-w-xl w-full rounded-lg shadow-lg border border-slate-300" />
+          </div>
+          <div class="flex justify-center">
+            <img src="/user_db%20.png" alt="Diagrama ERD de user db"
+              class="max-w-xl w-full rounded-lg shadow-lg border border-slate-300" />
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+
+  <router-outlet />
 </section>

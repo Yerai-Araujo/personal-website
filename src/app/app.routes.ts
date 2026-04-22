@@ -18,6 +18,12 @@ export const routes: Routes = [
       {
         path: 'projects/project2',
         loadComponent: () => import('./components/projects/Project2/project2.component').then(m => m.Project2Component),
+        children: [
+          {
+            path: 'api-docs-microservices',
+            loadComponent: () => import('./components/projects/Project2/api-docs/api-docs.component').then(m => m.ApiDocsComponent),
+          }
+        ]
       },
       {
         path: 'info',
