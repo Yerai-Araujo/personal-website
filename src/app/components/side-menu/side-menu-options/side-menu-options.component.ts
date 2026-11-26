@@ -20,7 +20,7 @@ export class SideMenuOptionsComponent {
   menuOptions: MenuOption[] = [
     {
       icon: 'fa-solid fa-chart-line',
-      label: 'Sobre mí',
+      label: 'Perfil profesional',
       route: '/home/info',
     },
     {
